@@ -1,6 +1,6 @@
 #!/bin/bash
 
-for package in $(pip freeze); do
+for package in $(python3 -m pip freeze); do
     name=$(echo $package | sed "s/==.*//")
-    pip install $name --upgrade --user
+    python3 -m pip install $name --upgrade --user
 done
